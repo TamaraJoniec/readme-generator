@@ -104,6 +104,6 @@ let readMe = `
 
 ### View more of my projects at [Github: ](https://github.com/${questions.Github})
 `
-await fs.writeFile('index.html', htmlText)
+await fs.writeFile('readme.md', readMe)
 
 console.log(questions)
