@@ -45,7 +45,7 @@ const questions = await inquirer.prompt([
         message: "What is your github?",
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'Licence',
         message: "What licence would you like your project to have?",
         choices: ['MIT', 'Apache 2.0', 'GPL', 'none']
@@ -60,8 +60,8 @@ const questions = await inquirer.prompt([
 // Tests
 // Questions
 
-function licenceBadge(licence) {
-    if(licence !== 'none') {
+function licenceBadge(Licence) {
+    if(Licence !== 'none') {
         return `[Licence: ] (https://img.shields.io/badge/license-${questions.License}-blue.svg)`
     } else {
         return ''
@@ -71,7 +71,7 @@ function licenceBadge(licence) {
 let readMe = `
 # ${questions.Title}
 
-## ${licenceBadge(licence)}
+## ${licenceBadge(questions.Licence)}
 
 ## Description 
 ### ${questions.Description}
@@ -104,6 +104,7 @@ let readMe = `
 
 ### View more of my projects at [Github: ](https://github.com/${questions.Github})
 `
+//await file system parameters 
 await fs.writeFile('readme.md', readMe)
 
 console.log(questions)
