@@ -96,14 +96,13 @@ let readMe = `
 ## Contributing
 ### ${questions.Contributing}
 
-## Contributing
-### ${questions.Contributing}
-
 ## Tests
 ### ${questions.Tests}
 
 ## Questions
-### ${questions.Questions}
+### If you have any questions, contact me at: ${questions.Email}.
+
+### View more of my projects at [Github: ](https://github.com/${questions.Github})
 `
 await fs.writeFile('index.html', htmlText)
 
