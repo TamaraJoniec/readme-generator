@@ -60,7 +60,6 @@ const questions = await inquirer.prompt([
 // Tests
 // Questions
 
-
 function licenceBadge(licence) {
     if(licence !== 'none') {
         return `[Licence: ] (https://img.shields.io/badge/license-${questions.License}-blue.svg)`
@@ -78,9 +77,33 @@ let readMe = `
 ### ${questions.Description}
 
 ## Table of Contents
-### ${}
+* [Installation: ](#Installation)
+* [Usage: ](#Usage)
+* [Licence: ](#Licence)
+* [Contributing: ](#Contributing)
+* [Tests: ](#Tests)
+* [Questions: ](#Questions)
 
+## Installation
+### ${questions.Installation}
 
+## Usage
+### ${questions.Usage}
+
+## Licence
+### ${questions.Licence}
+
+## Contributing
+### ${questions.Contributing}
+
+## Contributing
+### ${questions.Contributing}
+
+## Tests
+### ${questions.Tests}
+
+## Questions
+### ${questions.Questions}
 `
 await fs.writeFile('index.html', htmlText)
 
